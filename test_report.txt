@@ -3,19 +3,48 @@
 > react-scripts test --coverage
 
 PASS src/functions.test.ts
+FAIL src/arrays.test.ts
+  ● Testing the array functions › Testing the injectPositive function
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 0
+
+      Array [
+        100,
+        199,
+        1,
+    -   -5,
+        300,
+        7,
+        3,
+      ]
+
+      267 |         expect(injectPositive(NUMBERS_3)).toEqual([5, 5]);
+      268 |         expect(injectPositive(NUMBERS_4)).toEqual([0]);
+    > 269 |         expect(injectPositive(NUMBERS_5)).toEqual([100, 199, 1, -5, 300, 7, 3]);
+          |                                           ^
+      270 |         expect(injectPositive(NUMBERS_6)).toEqual([-100, 0, -200, 100, 200]);
+      271 |         expect(injectPositive(NUMBERS_7)).toEqual([199, 1, 550, 50, 200, 1000]);
+      272 |     });
+
+      at Object.<anonymous> (src/arrays.test.ts:269:43)
+
 PASS src/text.test.tsx
 PASS src/HtmlCss.test.tsx
 PASS src/App.test.tsx
 --------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------|---------|----------|---------|---------|-------------------
-All files     |      95 |      100 |     100 |   94.11 |                   
+All files     |   98.43 |      100 |     100 |    98.3 |                   
  App.tsx      |     100 |      100 |     100 |     100 |                   
+ arrays.ts    |     100 |      100 |     100 |     100 |                   
  functions.ts |   94.44 |      100 |     100 |   93.33 | 52                
 --------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 4 passed, 4 total
-Tests:       14 passed, 14 total
+Test Suites: 1 failed, 4 passed, 5 total
+Tests:       1 failed, 22 passed, 23 total
 Snapshots:   0 total
-Time:        2.882 s
+Time:        3.048 s
 Ran all test suites.
